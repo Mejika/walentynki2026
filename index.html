@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynki</title>
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: linear-gradient(to bottom, pink, white);
+        }
+        *{
+            font-family: Segoe Script;
+            font-weight: bolder;
+        }
+        #main{
+            margin: auto;
+            width: 70%;
+            height: 70%;
+            text-align: center;
+            align-content: center;
+            color: azure;
+            text-shadow: 2px 2px 0 pink;
+        }
+        h1{
+            text-transform: uppercase;
+            font-size: 250%;
+
+            
+        }
+        #big{
+            font-size: 200%;
+        }
+        button{
+            background-color: rgba(238, 172, 194, 0.678);
+            border: 4px solid rgba(255, 234, 234, 0.801);
+            border-radius: 5%;
+            width: 25%;
+            height: 10%;
+            margin:0 2vw 0 2vw;
+            font-size: 180%;
+            position: absolute;
+
+
+        }
+        img{
+            width: 40%;
+            height: 40%;
+        }
+        #yep{
+            left: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <img src="cute-hug.gif" alt="">
+        <h1>Bemdziesz mojom walentykom?</h1>
+        <button id="yep">TAK</button>
+        <button id="nah">NAH</button>
+    </div>
+
+
+    <script>
+    let tak = document.querySelector("#yep");
+    let nah = document.querySelector("#nah");
+
+    tak.addEventListener("click", ()=>{
+        let nowy = document.querySelector("#main");
+        nowy.innerHTML="<div id='big'><h1>for U</h1><img src='rose.gif'</img><h2>💖vuv U💖<h2></big>";
+
+    })
+    nah.addEventListener("click", ()=>{
+
+        let stylest = getComputedStyle(tak)
+        let stylesn = getComputedStyle(nah)
+ 
+
+        function change(what, which, x=5) {
+            what.style.setProperty("width", (parseFloat(which.width)+x)+"px");
+            what.style.setProperty("height", (parseFloat(which.height)+x)+"px");
+            
+        }
+
+        
+        nah.style.setProperty("left", Math.random()*window.innerWidth+"px");
+        nah.style.setProperty("top", Math.random()*window.innerHeight+"px");
+        change(tak,stylest);
+        change(nah,stylesn, -5);
+        
+    })
+</script>
+</body>
+
+</html>
