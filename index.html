@@ -75,11 +75,21 @@
         nowy.innerHTML="<div id='big'><h1>for U</h1><img src='rose.gif'</img><h2>💖vuv U💖<h2></big>";
 
     })
+    let counter = 0
     nah.addEventListener("click", ()=>{
 
         let stylest = getComputedStyle(tak)
         let stylesn = getComputedStyle(nah)
- 
+        
+        let tablica = [
+            "nie klikaj tego",
+            "przemysl to",
+            "proszeee",
+            'plisss',
+            "zgomdz siemm",
+            "nie ma nie"
+
+        ]
 
         function change(what, which, x=10) {
             what.style.setProperty("width", (parseFloat(which.width)+x)+"px");
@@ -90,12 +100,13 @@
         
         nah.style.setProperty("left", Math.random()*window.innerWidth+"px");
         nah.style.setProperty("top", Math.random()*window.innerHeight+"px");
+        nah.innerHTML = tablica[counter]
+        if (counter < 5){counter++;}
         change(tak,stylest);
         change(nah,stylesn, -5);
         
     })
 </script>
 </body>
-
 
 </html>
